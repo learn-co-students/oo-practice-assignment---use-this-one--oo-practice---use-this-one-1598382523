@@ -3,8 +3,8 @@ class Doctor
     attr_reader :specialty
     attr_accessor :name, :years
     def initialize(name,specialty,years=1)
-      @name = name
-      @specialty = specialty
+      @name = name.to_s
+      @specialty = specialty.to_s
       @years = years.to_i
     end
 end
@@ -20,10 +20,10 @@ if input == "y"
   puts "If you want to edit the info please hit (y/n)"
   edit = gets.chomp
   if edit == "y"
-    puts "which one?"
     puts "1. Name"
     puts "2. specialty"
     puts "3. Years"
+    puts "which one?"
     choice = gets.chomp
     if choice.to_i == 1
       puts "Enter the new name: "
