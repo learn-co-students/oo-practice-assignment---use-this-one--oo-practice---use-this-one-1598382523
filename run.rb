@@ -1,3 +1,4 @@
 require 'pry'
-
-binding.pry
+require './app/models/doctor'
+require './app/models/patient'
+#binding.pry
