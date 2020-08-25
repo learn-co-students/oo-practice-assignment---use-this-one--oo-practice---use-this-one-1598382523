@@ -22,7 +22,7 @@ class Doctor
 
 end
 
-claus = Doctor.new("Claus", "Heart Surgeon", 47)
+claus = Doctor.new("Claus", "Heart Surgeon", 5)
 
 claus.name
 
