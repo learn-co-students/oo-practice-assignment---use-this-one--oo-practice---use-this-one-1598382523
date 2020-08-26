@@ -58,18 +58,18 @@ end
 
 
 
-james = Doctor.new("Dr. Benning", "Neuroseurgeon", "60")
+# james = Doctor.new("Dr. Benning", "Neuroseurgeon", "60")
 
-carl = Doctor.new("Dr.Schraeder", "Physician", "56")
+# carl = Doctor.new("Dr.Schraeder", "Physician", "56")
 
-sandra = Doctor.new("Dr.Kurra", "Pediatrician", "47")
+# sandra = Doctor.new("Dr.Kurra", "Pediatrician", "47")
 
 
 
 
 
  
- Doctor.find_by_specialty("Pediatrician")
+#  Doctor.find_by_specialty("Pediatrician")
 
 
 
