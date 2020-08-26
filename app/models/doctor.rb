@@ -31,6 +31,5 @@ class Doctor
       end
       i+=1
       end
-      
-    end
 end
+
