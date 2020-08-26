@@ -1,16 +1,28 @@
 class Doctor
-    attr_accessor :doctor_name
+    attr_accessor :name, :years
     attr_writer :specialty
-    attr_accessor :years
+    
+    @@all = []
+    @@find_by_specialty = {:@specialty => :@name}
 
-    def initialize(doctor_name, specialty, years=1)
-        @doctor_name = doctor_name
+    def initialize(name, specialty, years=1)
+        @name = name
         @specialty = specialty
         @years = years
+        @@all << self 
+        @@find_by_specialty.store(specialty, name)
+    end
+    
+    def greet
+        puts "Welcome to Flatiron Hospital! We look forward to providing you with the nations best healthcare."
     end
 
-    def display_credentials
-        puts "Hello Dr. #{doctor_name}! You specialize in #{specialty} and have been working for #{years}."
+    def self.all
+        @all
+    end
+
+    def self.find_by_specialty(specialty)
+        return find_by_specialty[:specialty]
     end
     
 end
