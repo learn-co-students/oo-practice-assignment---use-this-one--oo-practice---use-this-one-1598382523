@@ -1,17 +1,28 @@
-# Patient
 class Patient
-# Patient#name: should return the Patient’s name and 
-# should be able to change its name after creation
+    attr_accessor :name, :age, :impatience
 
-# Patient#age: should return the Patient’s age and should 
-# be able to change its age after creation
-    attr_accessor :name, :age
-
-# Patient#initialize: should initialize with a name (string) and age (integer)
+    @@all = []
 
     def initialize(name, age)
         @name = name
         @age = age
+        @impatience = 0
+        @@all << self
+    end
+
+    def inquire_appt_ready
+        increase_impatience
+        "The doctor will be ready soon."
+    end
+
+    def self.all
+        @@all
+    end
+
+private
+
+    def increase_impatience
+        self.impatience += 1
     end
 
 end
