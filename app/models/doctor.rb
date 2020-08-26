@@ -23,7 +23,7 @@ class Doctor
     
     end
 end
-
-mamadou = Doctor.new('mamadou', 'heart surgeon', 20)
+ß
+mamadou = Doctor.new('mamadou', 'heart surgeons', 20)
 
 binding.pry

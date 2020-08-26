@@ -20,7 +20,7 @@ class Patient
 
 
     def inquire_appt_ready
-      puts "doctor will be ready soon"
+      puts "doctors will be ready soon"
       self.increase_impatience
      
     end
