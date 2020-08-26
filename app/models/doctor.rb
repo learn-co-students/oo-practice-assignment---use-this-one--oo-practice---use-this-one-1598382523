@@ -12,12 +12,16 @@ class Doctor
         @@all << self
     end
 
+    def self.all
+        @@all
+    end
+
     def greet
         print "Welcome to my family clinic! I am interested in spending time with you to diagnose your condition!"
     end
 
     def self.find_by_specialty(specialty)
-        @@all.select do |doctor|
+        self.all.select do |doctor|
             doctor.specialty == specialty
         end
     end
