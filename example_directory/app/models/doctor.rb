@@ -1,22 +1,24 @@
 class Doctor
-    def initialize(name, specialty, years = 1) 
-        @name = name
-        @specialty = specialty
-        @age = age
-    end
-    
-    def name
-        @name
-    end
-    
-    def specialty
-        @specialty
+    attr_accessor :name, :years
+    attr_reader :speciality
+    @@all=[]
+
+    def initialize(name, speciality, years=1)
+        @name=name
+        @speciality=speciality
+        @years=years
+        @@all<<self
     end
 
-    def years
-        @years
+    def self.all
+        @@all
+    end
+
+    def greet
+        "Hello #{self.name}, and welcome!"
+    end
+    
+    def self.find_by_speciality(speciality)
+        
     end
 end
-    
-    doc = Doctor.new("Pepper", "Chiropractor")
-    doc.name
