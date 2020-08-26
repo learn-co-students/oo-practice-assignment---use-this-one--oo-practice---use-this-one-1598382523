@@ -25,6 +25,12 @@ class Doctor
           newArray.push(doctor.name)
         end
       }
-      newArray
+      i = 0
+      while i < newArray.size do
+        puts newArray[i]
+      end
+      i+=1
+      end
+      
     end
 end
