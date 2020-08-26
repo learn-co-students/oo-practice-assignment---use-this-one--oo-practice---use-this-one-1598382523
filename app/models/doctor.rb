@@ -19,8 +19,12 @@ class Doctor
     end
 
     def self.find_by_speciality(speciality)
-      @@all.filter{ |doctor|
-        doctor.speciality == speciality
+      newArray = []
+      @@all.each{|doctor|
+        if doctor.speciality == speciality
+          newArray.push(doctor.name)
+        end
       }
+      newArray
     end
 end
