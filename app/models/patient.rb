@@ -7,7 +7,7 @@ class Patient
         @name = name
         @age = age
         @impatience = 0
-        @@ all << self
+        @@all << self
     end 
 
     def Patient.all
