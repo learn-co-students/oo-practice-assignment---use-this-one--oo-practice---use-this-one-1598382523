@@ -1,5 +1,8 @@
 require 'pry'
+require_relative './app/models/patient'
+require_relative './app/models/doctor'
 
-puts "This is Caryn's first commit!"
+bob = Patient.new("Bob", 47)
+maggie = Doctor.new("Maggie", "Orthopedist", 11)
 
 binding.pry
