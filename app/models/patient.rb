@@ -12,7 +12,7 @@ class Patient
 
     def inquire_appt_ready
         increase_impatience
-        "The doctor will be ready soon."
+        print "The doctor will be ready soon."
     end
 
     def self.all

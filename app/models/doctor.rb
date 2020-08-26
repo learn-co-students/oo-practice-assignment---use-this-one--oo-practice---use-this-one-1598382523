@@ -13,7 +13,7 @@ class Doctor
     end
 
     def greet
-        "Welcome to my family clinic! I am interested in spending time with you to diagnose your condition!"
+        print "Welcome to my family clinic! I am interested in spending time with you to diagnose your condition!"
     end
 
     def self.find_by_specialty(specialty)
