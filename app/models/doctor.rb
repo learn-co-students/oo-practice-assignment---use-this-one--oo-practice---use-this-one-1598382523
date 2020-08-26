@@ -1,25 +1,29 @@
 class Doctor
-    def initialize(name, specialty, years=1)
+    attr_accessor :name, :years
+    attr_reader :speciality
+    @@all = [] 
+
+    def initialize(name, speciality, years=1)
         @name = name 
         @speciality = speciality
         @years = years
-    end 
-    attr_accessor :name
-    attr_reader :speciality
-    attr_accessor :years
+        @@all << self
+    end  
+
+    def self.all
+        @@all 
  end 
-
- doctor = []
-@@all 
-
-
+ 
 
 def greet
-puts "Hello and welcome, how can we help you today?"
+     puts "Hello and welcome, how can we help you today?"
 end 
 
-self.find_by_specialty(speciality)
-doctors.each {@speciality}
+def self.find_by_specialty(speciality)
+self.all filter do |doctor|
+    doctor.speciality == speciality
+        end 
+    end 
 end 
 
 

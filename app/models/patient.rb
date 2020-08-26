@@ -1,30 +1,28 @@
+class Patient
+    attr_accessor :name, :age, :impatience
+    @@all = []
 
- class Patient
     def initialize(name, age)
         @name = name 
         @age = age 
         @impatience = 0 
-    
-    end 
+        @@all << self 
+        end 
+        
+        def self.all
+            @@all
+        end 
   
-    attr_accessor :name
-    attr_accessor :age 
-
-    Private
-    
-patients = []
-    def increase_impatience 
-        @impatience += 1
-    end 
-
     def inquire_appt_ready
-        puts " The doctor will be ready soon "
-        @impatience += 1 
+        puts " The doctor will be ready soon."
+        impatience 
     end 
 
-    def patients @@all
-        return patients 
-    end  
-
- end 
+    private
+    
+    def increase_impatience 
+        self.impatience += 1
+    end 
+end 
+ 
 
