@@ -1,27 +1,28 @@
+#require 'pry'
+
 class Doctor 
 
-    attr_accessor :name, :specialty, :years 
+    @@all = []
 
-    def initialize(name, specialty, years)
+    attr_accessor :name, :years 
+    attr_reader :specialty
+
+    def initialize(name, specialty, years=1)
         @name = name
         @specialty = specialty
         @years = years 
-
+        @@all << self 
 
     end 
 
-    def say_name 
-       puts  "{#@name}"
+    def greet
+        puts "Hello #{self.name}, how are you feeling today?"
+
+    def self.all
+        @@all
     end 
 
-    def specialty
-        "@specialty}"
-    end 
-
-    def years
-        @years 
-    end 
-
+#binding.pry 
 
 
 end     
