@@ -1,6 +1,5 @@
 require 'pry'
-
-puts "This is Madeline's initial commit!"
+require_relative './app/models/patient'
 
 binding.pry
 
