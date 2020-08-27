@@ -1,5 +1,6 @@
 class Patient
-    attr_accessor :name, :age, :impatience
+    
+    attr_accessor :name, :age, :impatience, :doctor
 
     @@all = []
 
@@ -8,6 +9,7 @@ class Patient
         @age = age
         @impatience = 0
         @@all << self
+        @doctor = nil
     end
 
     def inquire_appt_ready
@@ -17,6 +19,11 @@ class Patient
 
     def self.all
         @@all
+    end
+
+    def change_doctors(doc)
+        self.doctor = doc
+        "Your new doctor will be Dr. #{doc.name}! We hope you enjoy them!"
     end
 
 private

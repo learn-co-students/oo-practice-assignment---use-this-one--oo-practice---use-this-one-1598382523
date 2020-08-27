@@ -11,14 +11,15 @@
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
 
-DELIVERABLES 08/26/20:
-<!-- Patient
-    Patients should be initialized with an instance variable, impatience, set to 0
-    Patient#increase_impatience: should be a private method that increases impatience by 1 
-    Patient#inquire_appt_ready: should print that the doctor will be ready soon and increase patient impatience by 1
-    Patient.all: should return a list of all patient instances
+<!-- Associations:
+A Patient should belong to a Doctor
+A Doctor can have many Patients
+
+Patient
+Patient#doctor should return the Doctor instance for this patient
+Patient#change_doctors should take a doctor instance and update the patient’s doctor
+
 Doctor
-    Doctor.all: should return a list of all doctor instances
-    Doctor#greet: should print a greeting that would make any patient feel welcomed! 
-    Doctor.find_by_speciality: should take a specialty string as an argument and return a list of the doctors who have that specialty 
-    Submit your code: see git instructions from last assignment but start to commit to memory -->
+Doctor#patients should return an array of all the Patients for that doctor
+Doctor#discharge_patient should set a patient’s doctor to nil, only if the patient belongs to the current doctor
+Doctor#transfer_patient should change a patient’s doctor to another doctor. This should only work if the patient belongs to the current doctor. -->
