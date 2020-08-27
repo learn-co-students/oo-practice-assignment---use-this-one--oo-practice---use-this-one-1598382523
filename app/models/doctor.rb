@@ -1,4 +1,4 @@
-require 'pry'
+
 class Doctor
     attr_reader :speciality
     attr_accessor :name, :years
@@ -10,26 +10,28 @@ class Doctor
       @@all << self
     end
 
-    def self.all
+    def self.all   #Doctor.all
       @@all
     end
 
     def greet
-      puts "Welcome, My name is #{@name} and how are you today?"
+      puts "Welcome, My name is #{self.ame} and how are you today?"
     end
 
     def self.find_by_speciality(speciality)
-      newArray = []
-      @@all.each{|doctor|
-        if doctor.speciality == speciality
-          newArray.push(doctor.name)
-        end
-      }
-      i = 0
-      while i < newArray.size do
-        puts newArray[i]
-      end
-      i+=1
-      end
+      self.all.filter { |doctor| doctor.speciality == speciality}
+    end
+
+    def patients
+      Patient.all.filter { |patient| patient.doctor = self}
+    end
+
+    def discharge_patient(name)
+      self.patients.each { |patient| patient.doctor = nil  if patient.name == name}
+    end
+
+    def transfer_patient(patient_name,new_doctor)
+      self.patients.each { |patient| patient.doctor = new_doctor if patient.name == patient_name}
+    end
 end
 
