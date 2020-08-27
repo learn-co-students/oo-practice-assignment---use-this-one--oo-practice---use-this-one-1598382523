@@ -1,23 +1,29 @@
-require pry
 class Patient
-    attr_accessor :name, :age 
-    attr_writer :impatient
+    attr_accessor :name, :age, :impatience, :doctor
     @@all = []
 
-    def intialize (name, age)
+    def initialize (name, age, doctor)
         @name = name
         @age = age
-        @impatient = 0
+        @doctor = doctor
+        @impatience = 0
         @@all << self
     end
-    def inquire_appt_ready
-        puts "The doctor will be ready soon"
-        impatient.self += 1
+
+    def self.all
+        @@all
     end
 
-Privite 
+
+    def inquire_appt_ready
+        puts "The doctor will be ready soon"
+        increase_impatience
+    end
+
+
+private
         def increase_impatience
-            impatient.self += 1
+            self.impatience += 1
         end
     end
-binding.pry
+
