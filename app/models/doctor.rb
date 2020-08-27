@@ -13,6 +13,18 @@ class Doctor
     puts "Welcome #{self.name}"
   end
 
+  def patients
+    Patient.all.filter{|patient| patient.doctor == self }
+  end
+
+  def discharge_patient(name)
+    self.patients.each{|patient| patient.doctor = nil if patient.name == name}
+  end
+
+  def transfer_patient(patient_name, doctor_instance)
+    self.patients.each{|patient| patient.doctor = doctor_instance if patient.name == patient_name }
+  end
+  
   def self.all
     @@all
   end

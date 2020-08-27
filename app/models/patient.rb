@@ -1,14 +1,19 @@
 class Patient
 
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :doctor
 
   @@all = []
 
-  def initialize(name, age)
+  def initialize(name, age, doctor)
     @name = name
+    @doctor = doctor
     @age = age
     @impatience = 0
     @@all << self
+  end
+
+  def change_doctor(doctor)
+    self.doctor = doctor
   end
 
   def inquire_appt_ready
