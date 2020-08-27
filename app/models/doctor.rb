@@ -17,6 +17,12 @@ class Doctor
         Patient.all.filter{|patient|patient.doctor == self}
     end
 
+    def transfer_patient(trpatient, newdoc)
+        if trpatient.doctor == self
+            trpatient.doctor = newdoc
+        end
+    end
+
     def discharge_patient(patientinstance)
         if patientinstance.doctor == self
         patientinstance.doctor = nil
