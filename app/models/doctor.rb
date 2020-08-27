@@ -23,7 +23,7 @@ class Doctor
     end
 
     def patients
-      Patient.all.filter { |patient| patient.doctor = self}
+      Patient.all.find_all { |patient| patient.doctor = self}
     end
 
     def discharge_patient(name)
