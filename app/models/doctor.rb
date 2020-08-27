@@ -3,6 +3,9 @@ class Doctor
     attr_reader :speciality, :patients
     @@all = [] 
     @@patients = [] 
+    # CARYN SAYS: @@patients and the patients in the attr are incorrect
+    # CARYN SAYS: and I think remnants of the wrong way i showed you; go review the video from today! 
+    # CARYN SAYS: all your other methods look perfect! So you're just missing your patients method! 
 
     def initialize(name, speciality, years=1)
         @name = name 
@@ -27,10 +30,10 @@ class Doctor
     end 
 
     def discharge_patient(patient)
-         if patient.doctor == self
+        if patient.doctor == self
             patient.doctor = nil 
-         else puts "I'm sorry but you are not my patient."
-         end 
+        else puts "I'm sorry but you are not my patient."
+        end 
     end
 
     def transfer_patient(patient_instance, new_doctor)
