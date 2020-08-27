@@ -2,20 +2,40 @@ require 'pry'
 class Doctor
   attr_accessor :name,:specialty,:years
 
-  def initialize(name, years = "1",specialty)
+  @speciality = []
+  @@all = []
+
+  def initialize(name, years,specialty)
     @name = name
-    @years = years = 1
+    @years = years = "1"
     @specialty = specialty
+    @@all << self
+  end
+   def self.all
+    @@all
+   end
+  def speciality
+    @@speciality
   end
    
   def self.find_by_speciality(speciality)
     self.all.detect{|s| s.speciality == speciality}
   end
+  def patients
+    Patient.all.select{|patient| patient.doctor == self}
+  end
+  def patients_list(name)
+    Patient.new(name, self)
+
+    def discharge_patient
+      patient = self.patient
+      patient.each do |patient|
+      patient.doctor = nil
+      end
+    end
+  end
 end
 
-def self.all
-@@all
-end
 
 def doc
    puts "Hello what is your name Dr.?"
