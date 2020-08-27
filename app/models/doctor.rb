@@ -1,8 +1,8 @@
 class Doctor
   
-  @@all = []
   attr_accessor :name, :years
   attr_reader :speciality
+  @@all = []
   
   def initialize(name, speciality, years=1)
     @name = name
