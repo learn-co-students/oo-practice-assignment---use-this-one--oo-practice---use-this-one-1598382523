@@ -10,3 +10,7 @@
     - `git add .` to add all changes
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
+
+## General Feedback
+- Overall the code is functional, but the readability could be improved signficantly. 
+- Since this is your second time through, definitely do more testing, create more methods of your own inspiration, and even begin the CLI. 

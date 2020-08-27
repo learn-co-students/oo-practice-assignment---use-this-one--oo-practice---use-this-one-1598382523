@@ -1,5 +1,6 @@
 require 'pry'
 
+# CARYN SAYS: looks good! nitpicky comments below
 class Patient
     attr_accessor :name, :age, :impatience, :doctor
     @@all = []
@@ -10,6 +11,7 @@ class Patient
         @doctor=doctor
         @@all<<self
     end
+    # CARYN SAYS: put a line space between method end and the next method (readability)
     def self.all
         @@all
     end
@@ -19,7 +21,7 @@ class Patient
         puts "The doctor will be ready soon!"
     end
 
-    def change_doctors(newdoctor)
+    def change_doctors(newdoctor) # CARYN SAYS: snake_case!!!
         self.doctor = newdoctor
     end
 

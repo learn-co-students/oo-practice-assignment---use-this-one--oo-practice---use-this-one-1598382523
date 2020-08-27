@@ -1,5 +1,8 @@
 require 'pry'
 
+# CARYN SAYS: overall really good! some nitpicking comments below 
+# CARYN SAYS:  they're about readability mostly, but good practices to get into now 
+
 class Doctor
     attr_accessor :name, :years
     attr_reader :speciality
@@ -23,15 +26,16 @@ class Doctor
         end
     end
 
-    def discharge_patient(patientinstance)
+    def discharge_patient(patientinstance) # CARYN SAYS: snake_case!
         if patientinstance.doctor == self
-        patientinstance.doctor = nil
+        patientinstance.doctor = nil # CARYN SAYS: indentation!
         end
     end
+    # CARYN SAYS: line spaces between methods! 
     def greet
         "Hello, and welcome to #{self.name}'s practice!"
     end
-    def self.find_by_speciality(targetspeciality)
+    def self.find_by_speciality(targetspeciality) # CARYN SAYS: snake_case!
         self.all.filter {|doctor|doctor.speciality == targetspeciality}
     end
 end
