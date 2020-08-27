@@ -1,7 +1,8 @@
 class Doctor
     attr_accessor :name, :years
-    attr_reader :speciality
+    attr_reader :speciality, :patients
     @@all = [] 
+    @@patients = [] 
 
     def initialize(name, speciality, years=1)
         @name = name 
@@ -12,16 +13,33 @@ class Doctor
 
     def self.all
         @@all 
- end 
+    end 
  
 
-def greet
-     puts "Hello and welcome, how can we help you today?"
-end 
+    def greet
+        puts "Hello and welcome, how can we help you today?"
+    end 
 
-def self.find_by_specialty(speciality)
-self.all filter do |doctor|
-    doctor.speciality == speciality
+    def self.find_by_specialty(speciality)
+        self.all filter do |doctor|
+            doctor.speciality == speciality
+        end 
+    end 
+
+    def discharge_patient(patient)
+         if patient.doctor == self
+            patient.doctor = nil 
+         else puts "I'm sorry but you are not my patient."
+         end 
+    end
+
+    def transfer_patient(patient_instance, new_doctor)
+        if patient_instance.doctor == self
+            #making sure the patient is the doctors patient 
+            patient_instance.doctor = new_doctor 
+            #it the patient is the doctors patient assigning to new doc
+        else 
+            puts "Sorry Doctor you have the wrong patient!"
         end 
     end 
 end 
