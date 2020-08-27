@@ -10,3 +10,9 @@
     - `git add .` to add all changes
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
+
+
+## General Feedback
+- A couple of logic errors for some of the methods but overall solid handling of the relationship and methods. 
+- Make sure that you are clear on the corrections from my notes in your files
+- Once those are clear, try to build out things that aren't asked for; additional methods or behaviors (or even classes) to get more practice. 
