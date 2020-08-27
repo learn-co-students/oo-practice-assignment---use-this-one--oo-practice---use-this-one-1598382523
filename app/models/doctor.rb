@@ -13,6 +13,13 @@ class Doctor
     def self.all
         @@all
     end
+    def patients
+        Patient.all.filter{|patient|patient.doctor == self}
+    end
+
+    def discharge_patient(dpatient)
+        
+    end
     def greet
         "Hello, and welcome to #{self.name}'s practice!"
     end
@@ -33,3 +40,7 @@ end
 #Doctor#name: should return the Doctor’s name and should be able to change its name after creation done
 #Doctor#speciality: should return the Doctor’s speciality and should NOT be able to change its speciality after creation done
 #Doctor#years: should return the Doctor’s years and should be able to change its years after creation done
+
+#Doctor#patients should return an array of all the Patients for that doctor
+#Doctor#discharge_patient should set a patient’s doctor to nil, only if the patient belongs to the current doctor
+#Doctor#transfer_patient should change a patient’s doctor to another doctor. This should only work if the patient belongs to the current doctor.
