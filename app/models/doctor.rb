@@ -15,6 +15,23 @@ class Doctor
     @@all
   end
 
+  def patients
+    Patient.all.select {|patient| patient.doctor == self}
+  end
+
+  def discharge_patient(current_patient)
+    
+    if self.patients == current_patient 
+      self.patients.each {|patient| patient.doctor = nil}
+    end
+  end
+
+  def transfer_patient(new_doctor)
+    if patient.doctor == self
+      patient.doctor = new_doctor
+    end
+  end
+
   def greet
     puts "Greetings, dear patient! My name is #{self.name}."
   end
