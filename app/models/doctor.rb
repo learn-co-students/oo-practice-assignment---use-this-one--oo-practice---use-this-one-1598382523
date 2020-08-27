@@ -1,4 +1,3 @@
-require_relative 'patient.rb'
 
 class Doctor 
 
@@ -18,13 +17,30 @@ class Doctor
         @@all
     end
 
-    def greet
-        puts "My name is Doctor #{self.name} - welcome!"
+    def greet(patient)
+        puts "Hey, #{patient.name}. My name is Doctor #{self.name} - welcome!"
     end
 
     def self.find_by_specialty(specialty)
         @@all.select { |doc| doc.specialty == specialty }
     end
+
+    def patients
+        Patient.all.select { |patient| patient.doctor == self}
+    end
+
+    def discharge_patient(patient) 
+        if patient.doctor == self
+            patient.doctor = nil
+        end
+    end
+
+    def transfer_patient(new_doc, patient)
+        if patient.doctor == self
+            patient.doctor = new_doc
+        end
+    end
+
 
 end
 

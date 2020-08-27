@@ -1,13 +1,14 @@
 class Patient
 
-    attr_accessor :name, :age, :impatiences
+    attr_accessor :name, :age, :impatience, :doctor
 
     @@all = [] 
 
-    def initialize(name, age)
+    def initialize(name, age, doctor)
         @name = name
         @age = age
-        @impatiences = 0
+        @impatience = 0
+        @doctor = doctor
         @@all << self
     end
 
@@ -20,11 +21,17 @@ class Patient
         @@all
     end
 
+    def change_doctors(new_doc)
+        self.doctor = new_doc
+    end
+
     private
 
     def increase_impatience
-        self.impatiences += 1
+        self.impatience += 1
     end
+
+    
 
 end
 
