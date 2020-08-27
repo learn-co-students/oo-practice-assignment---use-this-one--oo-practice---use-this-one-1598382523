@@ -11,10 +11,14 @@ require 'pry'
 # Patient#inquire_appt_ready: should print that the doctor will be ready soon and increase patient impatience by 1
 # Patient.all: should return a list of all patient instances
 
+# Patient
+# Patient#doctor should return the Doctor instance for this patient
+# Patient#change_doctors should take a doctor instance and update the patient’s doctor
 
+ 
 class Patient
 
-    attr_accessor :name, :age, :impatience
+    attr_accessor :name, :age, :impatience, :doctor
 
 
     @@all = []
@@ -35,6 +39,14 @@ class Patient
     def inquire_appt_ready
         puts "The Doctor will be ready to see you soon."
         self.impatience += 1
+    end
+
+    def doctor
+        Doctor.all.filter { |doctor| doctor.name == self }
+    end
+
+    def change_doctors(new_doc)
+        new_doc.patient == self
     end
 
 
