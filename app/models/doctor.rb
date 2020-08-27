@@ -1,8 +1,10 @@
 class Doctor
+
 attr_accessor :name, :years
 attr_reader :specialty
 
     @@doctors = []
+    @@patients = []
    
 
 
@@ -10,9 +12,14 @@ attr_reader :specialty
     @name = name 
     @specialty = specialty
     @years = years
+    @@patients <<self  
     @@doctors << self 
     
     end
+    def self.patients
+        @@patients
+    end
+
 
     def self.all
         @@doctors
@@ -22,10 +29,15 @@ attr_reader :specialty
         puts "Hello there!"
     end
 
-    def self.find_by_specialty(specialty)
-        @@doctors = specialty 
+    def self.find_by_specialty(search_specialty)
+        self.all.find {|doctor| doctor.specialty == search_specialty}
     end
+
+    def patients
+        @@patients
+    end
+
 end
 
-meredith = Doctor.new("Meredith","No Specialty",9)
+
    

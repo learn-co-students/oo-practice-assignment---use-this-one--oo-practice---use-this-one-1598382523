@@ -1,6 +1,6 @@
 
 class Patient 
-attr_accessor :name, :age
+attr_accessor :name, :age, :doctor
 
     @@patients = []
 
@@ -8,6 +8,7 @@ attr_accessor :name, :age
         @name = name
         @age = age
         @impatience = 0
+        @doctor = doctor
         @@patients << self 
 
     end
@@ -20,7 +21,10 @@ attr_accessor :name, :age
     def self.all 
         @@patients
      end
-     
+
+     def change_doctors 
+    #I am very lost on how to format this. I know what a doctor instant is but i don't know how to update the patient's doctor.
+    end 
 
     private 
 
@@ -31,4 +35,3 @@ attr_accessor :name, :age
 end
 
 
-bryam = Patient.new("Bryam",22)
