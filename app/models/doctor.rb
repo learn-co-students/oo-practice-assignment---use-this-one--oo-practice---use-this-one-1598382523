@@ -1,7 +1,9 @@
 require 'pry'
+
 class Doctor
     attr_writer :speciality , :year
     attr_accessor :name
+    @@ all = []
 
     def initialize (name, speciality, year=1)
         @name = name
@@ -22,10 +24,16 @@ class Doctor
         puts "Hello, #{@self.name}, welcome to our hospital!"
     end
 
-    def find_by_speciality
-       
-
+    def find_by_speciality(search_speciality)
+       self.all.find_all {|speciality| speciality == "search_speciality"} 
     end
+
+    def patient
+        Patient.all.filter {|Patient| Patient.doctor == self}
+    end
+
+    
+
 
     
 

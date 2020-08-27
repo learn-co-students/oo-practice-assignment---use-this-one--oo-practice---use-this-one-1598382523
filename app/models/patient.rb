@@ -2,11 +2,12 @@ require 'pry'
 
 class Patient
     attr_accessor :name, :age
+    @@ all = []
 
     def initialize(name, age)
         @name = name
         @age = age
-        @impatience = 0
+        @count = 0
         @@ all << self
     end
 
@@ -14,15 +15,23 @@ class Patient
         @@all
     end
 
-    def impatience(num)
-        @impatience = impatience(num)
-    end
-
-
     private
 
     def patient_profile
         puts "You are #{@name} and #{@age} years old."
+        impatience_count
+    end
+
+    def impatience_count
+        self.count += 1
+    end
+
+    def doctor
+        self.all.Doctor.find_all { |doctor| doctor.patient = self}
+    end
+
+    def change_doctor(doctor_instance)
+        doctor_instance.patient = self
     end
 
     
