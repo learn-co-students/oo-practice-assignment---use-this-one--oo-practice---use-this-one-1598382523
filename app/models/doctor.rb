@@ -1,6 +1,3 @@
-
-
-
 class Doctor
   
   @@all = []
@@ -19,13 +16,12 @@ class Doctor
   end
 
   def greet
-    puts "Greetings, dear patient!"
+    puts "Greetings, dear patient! My name is #{self.name}."
   end
 
-  def find_by_speciality(speciality)
-    if speciality == self.speciality
-       puts self.all  #i know this is wrong but ran outta time.
-    end
+  def self.find_by_speciality(speciality)
+    self.all.select do |doctor|
+      doctor.speciality == speciality
   end
 end
 
