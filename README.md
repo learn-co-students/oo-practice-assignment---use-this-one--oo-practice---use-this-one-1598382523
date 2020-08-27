@@ -48,3 +48,10 @@ Doctor
     Doctor#patients should return an array of all the Patients for that doctor
     Doctor#discharge_patient should set a patient’s doctor to nil, only if the patient belongs to the current doctor
     Doctor#transfer_patient should change a patient’s doctor to another doctor. This should only work if the patient belongs to the current doctor.
+
+
+## General Feedback
+- Your file structure does not match! Yours is `app/models_directory` it should be `app/models`
+- Create a `console.rb` file and start testing your code.
+- You could also start building a small command line application in `run.rb` if you're ahead on labs!
+
