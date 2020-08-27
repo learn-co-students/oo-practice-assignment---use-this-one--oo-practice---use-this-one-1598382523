@@ -10,3 +10,19 @@
     - `git add .` to add all changes
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
+
+
+Practice Deliverables - 3
+
+Associations:
+    A Patient should belong to a Doctor ---DONE
+    A Doctor can have many Patients ---DONE
+Patient
+    Patient#doctor should return the Doctor instance for this patient ---Handled by the attr_accessor
+    Patient#change_doctors should take a doctor instance and update the patient’s doctor ---DONE
+Doctor
+    Doctor#patients should return an array of all the Patients for that doctor ---DONE
+
+    Doctor#discharge_patient should set a patient’s doctor to nil, only if the patient belongs to the current doctor ---DONE
+
+    Doctor#transfer_patient should change a patient’s doctor to another doctor. This should only work if the patient belongs to the current doctor. ---DONE
