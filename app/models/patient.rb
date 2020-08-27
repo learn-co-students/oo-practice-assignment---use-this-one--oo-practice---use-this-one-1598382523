@@ -1,37 +1,38 @@
-require 'pry'
 class Patient
+    attr_accessor :name, :age, :impatience, :doctor
+
     @@all = []
 
-    attr_accessor :name, :age :impatience
-
-    def initialize(name, age,)
+    def initialize(name, age)
         @name = name
         @age = age
         @impatience = 0
-        @@all << self 
-    end 
+        @doctor = doctor 
+        @@all << self
+    end
 
     def inquire_appt_ready
-        self.impatience += 1 
-        puts "The doctor will be ready soon"
-    end 
+        increase_impatience
+        print "The doctor will be ready soon."
+    end
 
     def self.all
         @@all
+    end
+
+    def doctor
+        @doctor
     end 
 
-private 
+    def change_doctor(new_doc)
+        self.doctor = new_doc 
+    end 
+
+
+ private
 
     def increase_impatience
-        self.impatience += 1 
-    end 
+        self.impatience += 1
+    end
 
-
-
-
-end    
-
-joe = Patient.new("Joe", "45")
-
-
-binding.pry 
+end
