@@ -1,12 +1,13 @@
 require 'pry'
 
 class Patient
-    attr_accessor :name, :age, :impatience
+    attr_accessor :name, :age, :impatience, :doctor
     @@all = []
-    def initialize(name, age, impatience=0)
+    def initialize(name, age, impatience=0, doctor=nil)
         @impatience=impatience
         @name=name
         @age=age
+        @doctor=doctor
         @@all<<self
     end
     def self.all
@@ -18,6 +19,10 @@ class Patient
         puts "The doctor will be ready soon!"
     end
 
+    def change_doctors(newdoctor)
+        self.doctor = newdoctor
+    end
+
     private
 
     def increase_impatience
@@ -25,7 +30,7 @@ class Patient
     end
 end
 
-binding.pry
+#binding.pry
 
 
 
@@ -38,3 +43,5 @@ binding.pry
 #Patient#increase_impatience: should be a private method that increases impatience by 1 done
 #Patient#inquire_appt_ready: should print that the doctor will be ready soon and increase patient impatience by 1 done
 #Patient.all: should return a list of all patient instances done
+#Patient#doctor should return the Doctor instance for this patient done
+#Patient#change_doctors should take a doctor instance and update the patient’s doctor done

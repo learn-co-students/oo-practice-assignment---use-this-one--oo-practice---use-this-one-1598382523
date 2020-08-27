@@ -22,7 +22,7 @@ class Doctor
 end
 
 
-binding.pry
+#binding.pry
 
 
 
