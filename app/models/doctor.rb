@@ -11,7 +11,21 @@ class Doctor
         @years = years.to_i
         @@all << self
     end
+    
+    def patients
+        Patient.all.filter{|patient| patient.doctor == self }
+    end
 
+    def discharge_patient(patient) 
+        if patient.doctor == self
+            patient.doctor = nil
+        end
+    end
+    def transfer_patient(patient_name, new_doc)
+        self.patients.each{|patient| patient.doctor = new_doc if patient.name == patient_name }
+    end
+
+    end
     def greet
         "welcome amazing patient"
     end
