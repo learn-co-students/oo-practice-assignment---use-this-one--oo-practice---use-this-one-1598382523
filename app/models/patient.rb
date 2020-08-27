@@ -27,7 +27,7 @@ class Patient
     private
     
     def increase_impatience 
-        self.impatience += 1
+        self.impatience += 1xs
     end 
 end 
  
