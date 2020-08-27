@@ -1,5 +1,4 @@
 class Doctor
-
     attr_reader :specialty
     attr_accessor :name, :years
     @@all = []
@@ -15,26 +14,27 @@ class Doctor
         @@all
     end
 
-    def name
-        @name
-    end
-
-    def specialty
-        @specialty
-    end
-
-    def years
-        @years
-    end
-
     def greet
-        p "Hi, come on in!"
+        puts "Hi! come on in, my name is #{self.name}."
     end
 
     def self.find_by_specialty(specialty)
-        self.specialty
+        self.all.filter do |doctor|
+            doctor.specialty == specialty
+        end
     end
- 
-end
 
-#Im not finished, for some reason my run.rb and console.rb file aren't running :(
+    def patients
+        Patient << self
+    end
+
+    def discharge_patient #Unsure
+        Patient.doctor=nil
+    end
+
+    def transfer_patient
+
+    end
+
+end
+# I wasn't able to finish because of pry not working!!!!
