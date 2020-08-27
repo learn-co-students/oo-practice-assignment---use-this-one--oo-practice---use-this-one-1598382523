@@ -1,30 +1,24 @@
-require 'pry'
 
 class Patient
 
-    attr_reader :impatience
-    attr_accessor :name, :age
+    attr_accessor :name, :age, :impatience
 
-    @@all []
-require 'pry'
+    @@all = []
 
-    def initialize(name, age, impatience=0)
+    def initialize(name, age)
         @name = name.to_s
         @age = age.to_i
-        @impatience = impatience
-    end
-
-    def impatience=(num)
-        @impatience = num
-    end
-
-    def inquire_appt_ready
-        self.impatience += 1
-        puts "The doctor will be ready soon."
+        @impatience = 0
+        @@all << self
     end
 
     def self.all
         @@all
+    end
+
+    def inquire_appt_ready
+        self.impatience += 1
+        puts "Thank you for your patience. The doctor will see you soon."
     end
 
     private
@@ -34,4 +28,6 @@ require 'pry'
     end
 
 end
+
+
 

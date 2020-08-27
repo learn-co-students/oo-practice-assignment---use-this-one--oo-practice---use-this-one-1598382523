@@ -1,29 +1,33 @@
-require 'pry'
 
 class Doctor
 
-    attr_reader :greet
-    attr_accessor :name, :specialty
+    attr_reader :specialty
+    attr_accessor :name, :years
 
-    @@all []
+    @@all = []
 
-    def initialize(name, specialty, greet)
-        @name = name.to_s
-        @specialty = specialty.to_s
-        @greet = greet
-    end
-
-    def greet
-        puts "Hello, #{self.name}. How are you doing today?"
-    end
-
-    def find_by_specialty(specialty)
-        #return a list of the doctors who have that specialty
+    def initialize(name, specialty, years)
+        @name = name
+        @specialty = specialty
+        @years = years
+        @@all << self
     end
 
     def self.all
         @@all
     end
+
+    def greeting
+        puts "Hello, #{self.name}. How are you doing today?"
+    end
+
+    def self.find_by_specialty(specialty)
+        self.all.filter {|doctor| doctor.specialty == specialty}
+    end
+
+    def patients
+        Patient.all.filter {|patient| patient.doctor == self}
+      end
 
 end
 
