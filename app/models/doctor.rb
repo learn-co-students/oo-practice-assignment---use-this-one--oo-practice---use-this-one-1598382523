@@ -30,5 +30,26 @@ class Doctor
     specialty_array
   end
 
-  binding.pry
+  def patients
+    Patient.all.select{ | patient_inst | patient_inst.doctor == self }
+  end
+
+  def discharge_patient(patient)
+    if patient.doctor == self
+      patient.doctor = nil
+    else
+      "Keep your hands off my patient, ya bum!"
+    end
+  end
+
+  def discharge_patient(patient, new_doctor)
+    if patient.doctor == self
+      patient.doctor = new_doctor
+      "I'm over you, #{new_doctor.name} will take care of you from now on"
+    else
+      "I said keep your hands off my patient, ya bum!"
+    end
+  end
+
+  # binding.pry
 end

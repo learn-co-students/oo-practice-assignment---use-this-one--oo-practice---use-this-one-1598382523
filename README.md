@@ -11,39 +11,28 @@
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
 
-Practice Deliverables :mailbox:
-<!-- Project Structure
-    - Ensure that your files and folders are structured correctly: app/models/patient.rb and app/models/doctor.rb -->
-Patient
-    <!-- - Patient#initialize: should initialize with a name (string) and age (integer)
-    - Patient#name: should return the Patient’s name and should be able to change its name after creation
-    - Patient#age: should return the Patient’s age and should be able to change its age after creation -->
-Doctor
-    <!-- - Doctor#initialize: should initialize with a name (string), specialty (string), and years (integer). Years should default to 1 -->
-    - Doctor#name: should return the Doctor’s name and should be able to change its name after creation
-    - Doctor#speciality: should return the Doctor’s speciality and should NOT be able to change its speciality after creation
-    - Doctor#years: should return the Doctor’s years and should be able to change its years after creation
+Practice Deliverables
 
-Practice Deliverables 2
+Associations:
+
+<!-- A Patient should belong to a Doctor -->
+
+A Doctor can have many 
+Patients
+
 Patient
 
-<!-- Patients should be initialized with an instance variable, impatience, set to 0
+<!-- Patient#doctor should return the Doctor instance for this patient -->
 
-Patient#increase_impatience: should be a private method that increases impatience by 1 
-
-Patient#inquire_appt_ready: should print that the doctor will be ready soon and increase patient impatience by 1
-
-Patient.all: should return a list of all patient instances -->
+<!-- Patient#change_doctors should take a doctor instance and update the patient’s doctor -->
 
 Doctor
-<!-- Doctor.all: should return a list of all doctor instances -->
 
-<!-- Doctor#greet: should print a greeting that would make any patient feel welcomed!  -->
+<!-- Doctor#patients should return an array of all the Patients for that doctor -->
 
-<!-- Doctor.find_by_speciality: should take a specialty string as an argument and return a list of the doctors who have that specialty  -->
+<!-- Doctor#discharge_patient should set a patient’s doctor to nil, only if the patient belongs to the current doctor -->
 
-
-
+Doctor#transfer_patient should change a patient’s doctor to another doctor. This should only work if the patient belongs to the current doctor.
 
 
 Submit your code: git instructions :code:

@@ -1,13 +1,14 @@
 require 'pry'
 
 class Patient
-  attr_accessor :name, :age, :impatience
+  attr_accessor :name, :age, :impatience, :doctor
   @@all = []
 
-  def initialize(name, age)
+  def initialize(name, age, doctor)
     @name = name.to_s
     @age = age.to_i
     @impatience = 0
+    @doctor = doctor
     @@all << self
   end
 
@@ -20,10 +21,18 @@ class Patient
     @@all
   end
 
+  def doctor
+    self.doctor
+  end
+
+  def change_doctors(new_doctor)
+    self.doctor = new_doctor
+  end
+
   private
 
   def increase_impatience
     self.impatience += 1
   end
-  binding.pry
+  # binding.pry
 end
