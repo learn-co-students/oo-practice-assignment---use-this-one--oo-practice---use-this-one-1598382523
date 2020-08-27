@@ -1,3 +1,5 @@
+# require_relative: app/models_directory/patient.rb
+
 class Doctor
 
     attr_reader :speciality, :greet
@@ -13,28 +15,48 @@ class Doctor
         @@all << self
     end
 
-    def name=(name)
-        @name = name
+    def self.all
+        @@all
     end
+
 
     def speciality
-        @speciality
-    end
-
-    def years=(years)
-        @years = years
+        @speciality = speciality
     end
 
     def greet
-        print "There'\s my favorite patient! How are we today?"
+        "There\'s my favorite patient! How are we today?"
     end
 
+    ## not sure that this works, will check over syntax and enumerator. Updated to use self
     def find_by_speciality(speciality)
-        all.find_all{|i| i.include?(speciality)}
+        self.all.find_all{|i| i.include?(speciality)}
     end
+
+    def patients
+        Patient.all.filter do |patient|
+            Patient.doctor == self
+        end
+    end
+
+    def discharge_patient
+        Patient.all.each do |patient|
+            if Patient.doctor == self
+                Patient.doctor = nil
+            end
+        end
+    end
+
+    def transfer_patient
+        # change patient's doctor to other doctor
+        Patient.all.each do |patient|
+            if Patient.doctor == self
+                    # generate new doctor? unsure
+                    new_doctor = Doctor.new(name, speciality)
+                # change to other doctor
+                Patient.doctor = new_doctor
+            end
+        end
+    end
+
 end
-
-
-# Doctor.all: should return a list of all doctor instances
-# Doctor#greet: should print a greeting that would make any patient feel welcomed! 
-# Doctor.find_by_speciality: should take a specialty string as an argument and return a list of the doctors who have that specialty 

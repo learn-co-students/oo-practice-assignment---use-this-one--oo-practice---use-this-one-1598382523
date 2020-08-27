@@ -1,6 +1,8 @@
+# require_relative: app/models_directory/doctor.rb
+
 class Patient
 
-    attr_accessor :name, :age, :impatience
+    attr_accessor :name, :age, :impatience, :doctor
 
     @@all = []
 
@@ -11,19 +13,22 @@ class Patient
         @@all << self
     end
 
-    def name#=(name)
-        self.name
-        # @name = name
-    end
-
-    def age#=(age)
-        self.age
-        # @age = age
+    def self.all
+        @@all
     end
 
     def inquire_appt_ready
         self.impatience += 1
-        print "The doctor will be ready soon"
+        "The doctor will be ready soon"
+    end
+
+    def doctor
+        self.doctor
+    end
+
+    # take a doctor instance and update patient's doctor
+    def change_doctors (doctor)
+        self.all.doctor = doctor
     end
 
 private
@@ -33,9 +38,3 @@ private
     end
 
 end
-
-
-# Patients should be initialized with an instance variable, impatience, set to 0
-#     Patient#increase_impatience: should be a private method that increases impatience by 1 
-#     Patient#inquire_appt_ready: should print that the doctor will be ready soon and increase patient impatience by 1
-#     Patient.all: should return a list of all patient instances
