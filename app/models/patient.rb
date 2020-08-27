@@ -1,30 +1,29 @@
 # Patient
 
 
-# 8-25-2020
-
-# initialize: should initialize with 
-#   -- a name (string) and age (integer)
-# Patient#name: should 
-#   -- return the Patient’s name and 
-#   -- should be able to change its name after creation
-# Patient#age: should 
-#   -- return the Patient’s age and 
-#   -- should be able to change its age after creation
-
-
 # 8-26-2020
 
 # Patients should be initialized with 
-#     -- an instance variable, impatience, 
-#         ---- set to 0
+#    -- an instance variable, impatience, 
+#        ---- set to 0
 # Patient#increase_impatience: should be 
-#     -- a private method that increases impatience by 1 
+#    -- a private method that increases impatience by 1 
 # Patient#inquire_appt_ready: should 
-#     -- print that the doctor will be ready soon and 
-#     -- increase patient impatience by 1
+#    -- print that the doctor will be ready soon and 
+#    -- increase patient impatience by 1
 # Patient.all: should 
-#     -- return a list of all patient instances
+#    -- return a list of all patient instances
+
+
+# 8-27-2020
+
+# Patient#doctor should 
+#    -- return the Doctor instance for this patient
+# Patient#change_doctors should 
+#    -- take a doctor instance and update the patient’s doctor
+
+
+########################################
 
 
 
@@ -37,7 +36,9 @@ class Patient
     def initialize(name, age)
         @name       = name.to_s
         @age        = age.to_i 
+        @doctor     = doctor.to_s
         @impatience = 0
+
         @@all << self
     end
 
@@ -53,5 +54,42 @@ class Patient
     def  increase_impatience
          self.impatience +=1  end
 
+    
+    def doctor
+        #puts "#{self.doctor}"
+        self.doctor  end
+
+    def change_doctors(@new_doc)
+        self.doctor = @new_doc    end
+
+
+
 
 end
+
+
+
+
+
+
+
+
+########################################
+########################################
+
+
+
+
+# 8-25-2020
+
+# initialize: should initialize with 
+#    -- a name (string) and age (integer)
+# Patient#name: should 
+#    -- return the Patient’s name and 
+#    -- should be able to change its name after creation
+# Patient#age: should 
+#    -- return the Patient’s age and
+#    -- should be able to change its age after creation
+
+
+
