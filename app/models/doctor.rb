@@ -17,8 +17,10 @@ class Doctor
         Patient.all.filter{|patient|patient.doctor == self}
     end
 
-    def discharge_patient(dpatient)
-        
+    def discharge_patient(patientinstance)
+        if patientinstance.doctor == self
+        patientinstance.doctor = nil
+        end
     end
     def greet
         "Hello, and welcome to #{self.name}'s practice!"
