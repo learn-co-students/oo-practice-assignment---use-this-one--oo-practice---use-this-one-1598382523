@@ -10,5 +10,4 @@ sienna = Patient.new("sienna",50,bardin)
 
 
 
-
 binding.pry
