@@ -24,7 +24,8 @@ class Patient
     @@all = []
     
     def initialize(name, age)
-
+		# CARYN SAYS: make sure you're initializing a patient with a doctor since it belongs to one
+		# CARYN SAYS: you'll need to add a parameter to the initialize and another instance variable
         @name = name.to_s
         @age = age.to_i
         @impatience = 0
@@ -38,15 +39,19 @@ class Patient
 
     def inquire_appt_ready
         puts "The Doctor will be ready to see you soon."
-        self.impatience += 1
+        self.impatience += 1 # CARYN SAYS: use your increase_impatience method here instead!
     end
 
+	# CARYN SAYS: this metho is created for you by your attrs! and it should access the doctor instance that will be stored as an instance variable 
     def doctor
         Doctor.all.filter { |doctor| doctor.name == self }
     end
 
     def change_doctors(new_doc)
-        new_doc.patient == self
+		new_doc.patient == self
+		# CARYN SAYS: ahhhh I think I'm seeing some misunderstanding here about which class holds the reference
+		# CARYN SAYS:  the patient instance holds the reference to the doctor since it can only be associated with one doctor
+		# CARYN SAYS:  so we update self.doctor == new_doc, where self is the current patient instance 
     end
 
 

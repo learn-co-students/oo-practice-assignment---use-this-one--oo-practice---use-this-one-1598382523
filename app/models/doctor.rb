@@ -22,7 +22,7 @@ require 'pry'
 
 class Doctor
 
-    attr_accessor :name, :years, :patient
+    attr_accessor :name, :years, :patient # CARYN SAYS: patient shouldn't be a part of the attrs, it'll be a method you create on your own (like you did below)
     attr_reader :speciality
 
     @@all = []
@@ -33,12 +33,12 @@ class Doctor
         @speciality = speciality.to_s
         @years = years.to_i
         @@all << self
-        @patients = []
+        @patients = [] # CARYN SAYS: this was the wrong way I showed you at first! 
 
     end
 
     def self.all
-        return @@all
+        return @@all # CARYN SAYS: ruby implicitly returns so you dont need to write the word "return" here unless you really want to :) 
     end
 
     def greet
@@ -46,23 +46,31 @@ class Doctor
     end
 
     def self.find_by_speciality(specialty)
-
+        # CARYN SAYS: find only gets you the first element that matches. What are better enumerable(s) to use here?
         doctor.find { |special| special.speciality == specialty}
 
     end
 
     def patients
         Patient.all.filter { |person|} patient.name == self }
+        # CARYN SAYS: some syntax errors here (a } too early in the filter)
+        # CARYN SAYS:  and make sure your comparator is correct. To know the patient belongs to the doctor we need to check patient.doctor == self, not name
     end
 
     def discharge_patient
+        # CARYN SAYS: this method should receive a patient_instance as an argument
+        # CARYN SAYS:  so that you can compare patient_instance.doctor == self
+        # CARYN SAYS:  Patient (captial P), the class, does not have a doctor method or attribute 
         if Patient.doctor == self
             return nil
+            # CARYN SAYS: if the patient belongs to the current doctor, we need to set it's doctor to nil
         end
     end
 
     def transfer_patient
-        
+        # CARYN SAYS:  this method will need to take a patient instnace and a doctor instance as arguments
+        # CARYN SAYS:  such as def transfer_patient(patient, new_doc)
+        # CARYN SAYS:  with the notes for discharge_patient in mind as well, can you write this method now?
 
     end
 
