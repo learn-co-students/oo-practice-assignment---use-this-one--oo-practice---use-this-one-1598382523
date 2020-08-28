@@ -1,16 +1,24 @@
 require 'pry'
 
 class Patient
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :impatience, :doctor
   @@all = []
 
-  def initialize(name, age)
+  def initialize(name, age, doctor)
     @name = name
     @age = age
+    @doctor = doctor
     @impatience = 0
-    @@all >> self
+    @@all << self
   end
     
+  def doctor
+    Doctor.new(name, self)
+  end
+
+  def change_doctors
+    doctor
+  end
   
   def inquire_appt_ready
     puts "The doctor will be ready soon"

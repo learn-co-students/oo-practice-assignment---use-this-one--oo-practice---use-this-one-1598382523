@@ -2,21 +2,43 @@ require 'pry'
 class Doctor
   attr_accessor :name,:specialty,:years
 
-  def initialize(name, years = "1",specialty) # CARYN SAYS: your default value for years should be an integer of 1, its current a string 
+  @speciality = []
+  @@all = []
+
+  def initialize(name, years,specialty)  # CARYN SAYS: your default value for years should be an integer of 1, its current a string 
     @name = name
-    @years = years = 1 # CARYN SAYS: you handle the default arg where you define the parameters to initialize on line 5
+    @years = years = "1"  # CARYN SAYS: you handle the default arg where you define the parameters to initialize on line 5
     @specialty = specialty
+    @@all << self
+  end
+
+   def self.all
+    @@all
+   end
+   
+  def speciality
+    @@speciality
   end
    
   def self.find_by_speciality(speciality)
     self.all.detect{|s| s.speciality == speciality}
     # CARYN SAYS: detect will only return the first of the elements that match 
   end
+  def patients
+    Patient.all.select{|patient| patient.doctor == self}
+  end
+  def patients_list(name)
+    Patient.new(name, self)
+
+    def discharge_patient
+      patient = self.patient
+      patient.each do |patient|
+      patient.doctor = nil
+      end
+    end
+  end
 end
 
-def self.all
-@@all
-end
 
 def doc
    puts "Hello what is your name Dr.?"
