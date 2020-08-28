@@ -10,4 +10,6 @@ rebecca = Patient.new("Rebecca", 27)
 bob = Doctor.new("Bob", "Orthopedics", 11)
 tom = Doctor.new("Tom", "Dermatology", 4)
 
+# CARYN SAYS: good beginnings of testing! 
+# CARYN SAYS:  to level up, move this to console.rb and start a CLI in this file
 binding.pry

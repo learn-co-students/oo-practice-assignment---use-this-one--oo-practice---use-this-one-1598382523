@@ -1,5 +1,6 @@
 
 class Doctor
+  # CARYN SAYS: looks great! spot on across the board
 
     attr_reader :specialty
     attr_accessor :name, :years

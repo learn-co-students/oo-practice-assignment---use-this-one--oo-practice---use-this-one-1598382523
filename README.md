@@ -26,3 +26,8 @@ Doctor
     Doctor#discharge_patient should set a patient’s doctor to nil, only if the patient belongs to the current doctor ---DONE
 
     Doctor#transfer_patient should change a patient’s doctor to another doctor. This should only work if the patient belongs to the current doctor. ---DONE
+
+
+## General Feedback
+- You've got a solid foundation with classes & instances and the one-to-many association!
+- Keep up the good work, and level up the work. Think of your own methods to write, build a CLI in `run.rb`, etc.
