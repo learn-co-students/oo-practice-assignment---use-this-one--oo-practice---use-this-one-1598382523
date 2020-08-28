@@ -1,5 +1,5 @@
 class Doctor
-    
+    # CARYN SAYS:  looks great! 
     attr_accessor :name, :years
     attr_reader :specialty
 
@@ -30,6 +30,7 @@ class Doctor
     end    
 
     def discharge_patient(patient)
+        # CARYN SAYS: love to see it, especially the specificity in the else statement! 
         if patient.doctor == self
             patient.doctor = nil
         else
