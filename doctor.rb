@@ -2,14 +2,15 @@ require 'pry'
 class Doctor
   attr_accessor :name,:specialty,:years
 
-  def initialize(name, years = "1",specialty)
+  def initialize(name, years = "1",specialty) # CARYN SAYS: your default value for years should be an integer of 1, its current a string 
     @name = name
-    @years = years = 1
+    @years = years = 1 # CARYN SAYS: you handle the default arg where you define the parameters to initialize on line 5
     @specialty = specialty
   end
    
   def self.find_by_speciality(speciality)
     self.all.detect{|s| s.speciality == speciality}
+    # CARYN SAYS: detect will only return the first of the elements that match 
   end
 end
 
