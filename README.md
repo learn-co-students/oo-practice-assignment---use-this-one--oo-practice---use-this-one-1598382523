@@ -34,3 +34,10 @@
     - Doctor.all: should return a list of all doctor instances
     - Doctor#greet: should print a greeting that would make any patient feel welcomed! 
     - Doctor.find_by_speciality: should take a specialty string as an argument and return a list of the doctors who have that specialty 
+
+
+## General Feedback
+- Good code style in general - missing an end here or there. 
+- Good sense of class vs instance variables and methods
+- Some lack of clarity around which model holds the reference and how to update and use that relationship. 
+- Let's try to grab time soon to build out a small relationship and get clear on the essentials of how to implement the relationships in code. 

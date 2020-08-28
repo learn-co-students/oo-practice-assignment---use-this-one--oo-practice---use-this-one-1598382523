@@ -7,7 +7,7 @@ class Patient
         @name = name
         @age = age
         @impatience = 0
-        @doctor = doctor
+        @doctor = doctor # CARYN SAYS: doctor is undefined! it needs to be a parameter to the initialize method 
         @@all << self
     end 
 
@@ -20,6 +20,8 @@ class Patient
         increase_impatience
     end 
 
+	# CARYN SAYS:  this method is created for you by your attrs above! Since doctor is an instance variable it's that easy
+	# CARYN SAYS:  you can delete this method 
     def doctor
         Doctor.all.select do |doctor|
             doctor.patient == self
@@ -27,7 +29,10 @@ class Patient
     end 
 
     def change_doctors(doctor_instance)
-        doctor_instance.patient = self
+		doctor_instance.patient = self
+		# CARYN SAYS: remember which way your reference goes!
+		# CARYN SAYS: patient, the belongs_to, holds the reference. 
+		# CARYN SAYS:  so instead, self.doctor = doctor_instance
     end  
 
     private 
