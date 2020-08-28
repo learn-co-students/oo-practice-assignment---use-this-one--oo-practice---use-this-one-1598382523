@@ -10,3 +10,10 @@
     - `git add .` to add all changes
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
+
+
+## General Feedback
+- Based on your updates the areas I want you to focus on are...
+    - class methods vs instance methods and how to define those
+    - high level how the one-to-many/ has_many, belongs_to relationship works. Which class holds the reference? How do you write the initialize and attrs to store that information and be able to access it?
+- Make sure you're testing outside of the class files. Instead create a console.rb file, require in your class files so you have access to Doctor and Patient, and create instances to test with inside of pry. 
