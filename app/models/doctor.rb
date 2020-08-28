@@ -20,7 +20,9 @@ class Doctor
     @@all
   end
 
-  def find_by_specialty(specialty_string)
+  def find_by_specialty(specialty_string) # CARYN SAYS: this should be a class method so it needs to be define as def self.find_by_specialty
+    # CARYN SAYS: there are better enumerator(s) than map to use here, which will also shortern your code
+    # CARYN SAYS:  update this for your next submission!
     specialty_array = []
     @@all.map do | doctor|
       if doctor.specialty == specialty_string
@@ -31,6 +33,7 @@ class Doctor
   end
 
   def patients
+    # CARYN SAYS: good! 
     Patient.all.select{ | patient_inst | patient_inst.doctor == self }
   end
 
@@ -38,7 +41,7 @@ class Doctor
     if patient.doctor == self
       patient.doctor = nil
     else
-      "Keep your hands off my patient, ya bum!"
+      "Keep your hands off my patient, ya bum!" # CARYN SAYS: lololol
     end
   end
 
@@ -46,6 +49,7 @@ class Doctor
     if patient.doctor == self
       patient.doctor = new_doctor
       "I'm over you, #{new_doctor.name} will take care of you from now on"
+      # CARYN SAYS: woooooooow, but correct lol
     else
       "I said keep your hands off my patient, ya bum!"
     end

@@ -40,3 +40,10 @@ git add .
 git commit -m "describe what you did"
 git push 
 After you git push, you may see more specific commands in your terminal. Use those!
+
+## General Feedback
+- Nearly all correct! Your handling of the one to many association is good so far. 
+- One thing to improve is your creation of instance methods versus class methods. See `Doctor.find_by_specialty`. 
+- Also make sure you're taking notes on the enumerators you have access to so you can choose the one best suited to the behavior you're creating
+- Make sure that you're making enough instances to really test with in your run.rb. 
+- Also go ahead and move that testing code over to console.rb (you'll have to make this file) and then use run.rb to start a CLI. 

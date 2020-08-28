@@ -1,6 +1,7 @@
 require 'pry'
 
 class Patient
+# CARYN SAYS: looks good overall! one improvement below 
   attr_accessor :name, :age, :impatience, :doctor
   @@all = []
 
@@ -21,6 +22,7 @@ class Patient
     @@all
   end
 
+  # CARYN SAYS: this method is created for you by the attr's above! so you can delete this!
   def doctor
     self.doctor
   end

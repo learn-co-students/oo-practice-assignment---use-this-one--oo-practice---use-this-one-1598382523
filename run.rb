@@ -6,4 +6,6 @@ require_relative './app/models/doctor.rb'
 saul = Doctor.new('Saul', 'death', 345)
 kaylee = Patient.new('Kaylee', 22, "Saul")
 
+# CARYN SAYS: make sure you have enough instances to really test with!
+
 binding.pry
