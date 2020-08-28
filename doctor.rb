@@ -1,11 +1,12 @@
 require 'pry'
 class Doctor
+  # CARYN SAYS: please be careful with your syntax for readability! Indent carefully and add a line space between methods 
   attr_accessor :name,:specialty,:years
 
-  @speciality = []
+  @speciality = [] # CARYN SAYS: doctor's only have one speciality (a string) which you set up correctly in the initialize. Remove this line! 
   @@all = []
 
-  def initialize(name, years,specialty)  # CARYN SAYS: your default value for years should be an integer of 1, its current a string 
+  def initialize(name, years,specialty)  # CARYN SAYS: your default value for years should be an integer of 1 and should be up here
     @name = name
     @years = years = "1"  # CARYN SAYS: you handle the default arg where you define the parameters to initialize on line 5
     @specialty = specialty
@@ -15,7 +16,9 @@ class Doctor
    def self.all
     @@all
    end
-   
+
+   # CARYN SAYS: the speciality reader is created for you by your attr above and should return @speciality. 
+   # CARYN SAYS:  you can remove this whole method
   def speciality
     @@speciality
   end
@@ -23,23 +26,33 @@ class Doctor
   def self.find_by_speciality(speciality)
     self.all.detect{|s| s.speciality == speciality}
     # CARYN SAYS: detect will only return the first of the elements that match 
+    # CARYN SAYS: What enumerator(s) are more appropriate here?
   end
+
   def patients
     Patient.all.select{|patient| patient.doctor == self}
+    # CARYN SAYS: good!
   end
+
   def patients_list(name)
     Patient.new(name, self)
+    # CARYN SAYS:  you didn't close this method! 
+    # CARYN SAYS:  this is one of the reasons your code style is so important - so that you won't get errors due to syntax 
 
     def discharge_patient
+      # CARYN SAYS: this method should accept a patient instance as a parameter
+      # CARYN SAYS: make sure you're also clear on what types you're working with and how you're referencing info
+      # CARYN SAYS:  self is the current docotr and it doesn't have a .patient method; it does have .patients
       patient = self.patient
       patient.each do |patient|
-      patient.doctor = nil
+        # CARYN SAYS: indent code inside of the code block like the do/end
+        patient.doctor = nil
       end
     end
   end
 end
 
-
+# CARYN SAYS: this looks like CLI code! move it to your run.rb file
 def doc
    puts "Hello what is your name Dr.?"
    name = gets.chomp

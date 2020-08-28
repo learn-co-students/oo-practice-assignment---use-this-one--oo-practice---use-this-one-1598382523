@@ -17,5 +17,6 @@
     - `app/models/doctor.rb`
     - So there will be an `app` directory inside of the project directory, a `models` directory inside of the `app` directory and the files inside of the `models` folder. 
 - The run methods you've created in patient.rb and doctor.rb are the beginnings of a CLI. Those should live in your run.rb file; not inside of the Doctor and Patient classes
-
-# CARYN SAYS: 
+- Work on your code style; readability will help you read your own code and write more successful code without a lot of debugging. 
+- Ensure you're thinking critically about what information you have access to and what type it is; see notes in Doctor#discharge_patient
+- You do have a lot of the code there for the first type of association, one-to-many, but due to the errors it seems like you may be pattern matching. Work back through the labs and even do OO Practice Part III again and try to be clear about *why* you are writing each piece of code. 

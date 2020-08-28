@@ -12,11 +12,14 @@ class Patient
     @@all << self
   end
     
+  # CARYN SAYS: this method was created for you by your attr above! and it should only return the current doctor, not create a new one
   def doctor
     Doctor.new(name, self)
   end
 
   def change_doctors
+    # CARYN SAYS: this method should accept a new doctor a la def change_doctors(new_doc)
+    # CARYN SAYS:  and set the current patient's doctor to new_doc
     doctor
   end
   
@@ -36,6 +39,7 @@ class Patient
   end
 end
 
+# CARYN SAYS: move this to your run file! 
 def run
   puts "Hello what is your name?"
   name = gets.chomp
