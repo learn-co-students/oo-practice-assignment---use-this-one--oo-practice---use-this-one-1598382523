@@ -40,3 +40,8 @@ Doctor
 Doctor#patients should return an array of all the Patients for that doctor
 Doctor#discharge_patient should set a patient’s doctor to nil, only if the patient belongs to the current doctor
 Doctor#transfer_patient should change a patient’s doctor to another doctor. This should only work if the patient belongs to the current doctor.
+
+
+## General Feedback
+- Much better handling of instance vs class variables and methods than last round!
+- Once we get pry set up, spend a lot of time focusing on setting up the associations. I made lots of notes in your files about how the belongs_to should hold the reference to the class that it belongs to (in this case Patient is the belongs_to and it holds the reference to a Doctor instance)
