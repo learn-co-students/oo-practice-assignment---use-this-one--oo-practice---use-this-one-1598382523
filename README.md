@@ -22,3 +22,8 @@ Doctor
 Doctor.all: should return a list of all doctor instances
 Doctor#greet: should print a greeting that would make any patient feel welcomed! 
 Doctor.find_by_speciality: should take a specialty string as an argument and return a list of the doctors who have that specialty  -->
+
+## General Feedback
+- Your understanding and implementation of the concepts up to this point is pretty solid! You were missing arguments to methods in a couple of places, noted in those files.
+- Since you do have a pretty good grasp of the content, push yourself to handle else cases, think about user feedback and implement your own methods. Move the testing into a `console.rb` file and then use `run.rb` in order to start building a CLI. 
+- Good job so far :) 

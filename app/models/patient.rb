@@ -7,7 +7,7 @@ class Patient
         @name = name
         @age = age
         @impatience = 0
-        @doctor = doctor 
+        @doctor = doctor # CARYN SAYS: right now doctor is undefined! it needs to be passed in as a paramter to initialize
         @@all << self
     end
 
@@ -20,11 +20,13 @@ class Patient
         @@all
     end
 
+	# CARYN SAYS:  this method is written for you by your attr! you should delete this!
     def doctor
         @doctor
     end 
 
-    def change_doctor(new_doc)
+	def change_doctor(new_doc)
+		# CARYN SAYS: good! 
         self.doctor = new_doc 
     end 
 

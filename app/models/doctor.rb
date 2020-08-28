@@ -22,12 +22,14 @@ class Doctor
     end
 
     def patients 
+        # CARYN SAYS: good! 
         Patients.all.select do |pat|
             pat.doctor == self 
         end 
     end 
 
     def discharge_patient 
+        # CARYN SAYS: this should take a patient instance! I think that may just have been oversight since you did it in the next method
         if patient.doctor == self 
             patient.doctor = nil 
         end 
@@ -37,12 +39,13 @@ class Doctor
         if patient.doctor == self 
             patient.doctor = new_doc
         end     
-
+        # CARYN SAYS:  since both these methods are pretty much right, correct the first, and then think about else and user feedback handling!
     end 
 
 
 
     def self.find_by_specialty(specialty)
+        # CARYN SAYS: good! 
         self.all.select do |doctor|
             doctor.specialty == specialty
         end
