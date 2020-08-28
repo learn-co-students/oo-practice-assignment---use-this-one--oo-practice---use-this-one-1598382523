@@ -10,3 +10,7 @@
     - `git add .` to add all changes
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
+
+
+## General Feedback
+- Part III not submitted, last code pushed on Tuesday
