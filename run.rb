@@ -9,4 +9,7 @@ tristan = Patient.new("Tristan", 32, tiffany)
 
 howard = Doctor.new("Howard", "Pediatrician", 9)
 tiffany = Doctor.new("Tiffany", "Orthadontist", 3) 
+
+# CARYN SAYS:  if you run this file you'd immediately get errors that howard and tiffany are not defined
+# CARYN SAYS:  why? how do you fix it? 
 binding.pry

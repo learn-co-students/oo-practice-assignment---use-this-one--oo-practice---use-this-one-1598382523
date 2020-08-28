@@ -10,3 +10,8 @@
     - `git add .` to add all changes
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
+
+## General Feedback
+- File structure - `doctors.rb` should be singular `doctor.rb`! When we get to ActiveRecord in Week2 this would create errors for you! Please fix it :) 
+- A lot of how you've associated the models are correct. See notes in `doctor.rb` for how to update the methods from Part III and finish out `patient.rb`
+- You started to test but I can tell you didn't run the file because you'd get errors immediately! Go ahead and actually run your tests and debug why the file is broken. Hints in the `run.rb` file as well as a reminder that computers are real dumb. 

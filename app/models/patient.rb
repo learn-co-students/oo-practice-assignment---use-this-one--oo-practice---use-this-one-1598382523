@@ -1,4 +1,5 @@
 class Patient
+	# CARYN SAYS:  everything here looks good but you didnt get to the change_doctors method! 
     attr_accessor :name, :age, :impatience, :doctor
     @@all = []
 
