@@ -10,3 +10,9 @@
     - `git add .` to add all changes
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
+
+
+## General Feedback
+- Your code is neaaarly perfect (see note in patient.rb initialize)
+- Since it seems like you have a great handle on the concepts so far, start to go beyond what is required. Think of your own methods and behaviors you'd want to see. Move the testing code to a console.rb file and use run.rb to build a CLI to use your classes! 
+- Good job so far :) 

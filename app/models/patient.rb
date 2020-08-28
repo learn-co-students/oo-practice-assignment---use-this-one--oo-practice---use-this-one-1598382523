@@ -6,7 +6,7 @@ class Patient
 		@name = name
 		@age = age.to_i
 		@impatience = 0
-		@doctor = doctor
+		@doctor = doctor # CARYN SAYS: doctor is undefined right now! add it as a parameter to the initialize method
 		@@all << self
 	end
 
@@ -29,6 +29,7 @@ class Patient
 		self.impatience += 1
 	end
 
+	# CARYN SAYS: I don't think you use this; Patient#doctor is created by your attr above 
 	def doc
 		self.doctor
 	end

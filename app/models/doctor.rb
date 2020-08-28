@@ -1,4 +1,5 @@
 class Doctor
+    # CARYN SAYS: beautiful!! *claps*
     attr_accessor :name, :years
     attr_reader :specialty
 
