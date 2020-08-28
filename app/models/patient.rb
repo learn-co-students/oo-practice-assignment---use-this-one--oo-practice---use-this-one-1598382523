@@ -26,7 +26,8 @@
 ########################################
 
 
-
+# CARYN SAYS: see note in doctor about how to indent your end's
+# CARYN SAYS: please update for when you push your code next!
 
 class Patient
       attr_accessor :name, :age
@@ -36,7 +37,8 @@ class Patient
     def initialize(name, age)
         @name       = name.to_s
         @age        = age.to_i 
-        @doctor     = doctor.to_s
+        @doctor     = doctor.to_s # CARYN SAYS: doctor should be a Doctor instance, so no .to_s needed
+        # CARYN SAYS:  also make sure that you're then passing in doctor as an argument to initialize
         @impatience = 0
 
         @@all << self
@@ -51,14 +53,21 @@ class Patient
         increase_impatience                         end 
 
     private
+    # CARYN SAYS: only one of the methods under the keyword private here should be private
+    # CARYN SAYS: remember, any methods written underneath that keyword will be made private
+    # CARYN SAYS:  move the two methods that shouldn't be private above the keyword!
     def  increase_impatience
          self.impatience +=1  end
 
     
+    # CARYN SAYS: instead of writing your own doctor method, you could use the attr's above
+    # CARYN SAYS: good use of self!
     def doctor
         #puts "#{self.doctor}"
         self.doctor  end
 
+    # CARYN SAYS: remember that @ denotes an instance variable
+    # CARYN SAYS:  you want this argument to be a normal variable 
     def change_doctors(@new_doc)
         self.doctor = @new_doc    end
 

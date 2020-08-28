@@ -44,11 +44,17 @@ class Doctor
     end
 
     def  self.all
-         @@all    end
+      @@all  
+      # CARYN SAYS: watch your syntax; ends should go on a new line, in line with where you open the code block
+      # CARYN SAYS:  so def/end should be tabbed to the same indent; if/elsif/end as well  
+    end
 
 
     def greet(patient)
-        puts "Hello #{patient}! How are you feeling today? :)"  end
+        puts "Hello #{patient}! How are you feeling today? :)"  
+        # CARYN SAYS: I like that this is personalized! 
+        # CARYN SAYS: if you're passing in a whole patient instance here, use patient.name
+    end
 
 
 

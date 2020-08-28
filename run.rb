@@ -10,3 +10,6 @@
 
 require_relative '.app/models/doctor.rb'
 require_relative '.app/models/patient.rb'
+
+# CARYN SAYS: make sure you're requiring in the pry library
+# CARYN SAYS:  and creating instances to test with! 
