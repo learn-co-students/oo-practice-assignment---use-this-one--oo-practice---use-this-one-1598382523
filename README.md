@@ -31,3 +31,9 @@
   - Doctor#patients should return an array of all the Patients for that doctor
   - Doctor#discharge_patient should set a patient’s doctor to nil, only if the patient belongs to the current doctor
   - Doctor#transfer_patient should change a patient’s doctor to another doctor. This should only work if the patient belongs to the current doctor.
+
+
+## General Feedback
+- Overall really good handle of what we have covered so far including the one-to-many association!
+- A few small comments about using instances instead of some attribute (like name). This was hopefully also clarified by the OO Banking pairing lab. LMK if you still have questions though!
+- Since you've got a good handle on what we've covered so far, start testing more. See the notes in `run.rb` and also think of your own methods that you want to create to continue pushing yourself! 
