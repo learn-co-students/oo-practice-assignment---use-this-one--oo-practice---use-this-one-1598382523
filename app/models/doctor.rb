@@ -19,16 +19,19 @@ class Doctor
     Patient.all.select {|patient| patient.doctor == self}
   end
 
-  def discharge_patient(current_patient)
-    
-    if self.patients == current_patient 
-      self.patients.each {|patient| patient.doctor = nil}
+  def discharge_patient(patient_instance)
+    if patient_instance.doctor == self 
+      patient_instance.doctor = nil
+    else
+      puts "You can only discharge patients who are here to see you!"
     end
   end
 
-  def transfer_patient(new_doctor)
-    if patient.doctor == self
-      patient.doctor = new_doctor
+  def transfer_patient(patient_instance, new_doctor)
+    if patient_instance.doctor == self
+      patient_instance.doctor = new_doctor
+    else
+      puts "You can only transfer a patient who is currently being treated by you!"
     end
   end
 

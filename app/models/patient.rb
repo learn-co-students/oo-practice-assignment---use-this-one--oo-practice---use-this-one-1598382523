@@ -3,7 +3,7 @@ class Patient
   attr_accessor :name, :age, :impatience, :doctor
   @@all = [] 
   
-  def initialize(name, age)
+  def initialize(name, age, doctor)
     @name = name 
     @age = age
     @doctor = doctor
@@ -16,11 +16,11 @@ class Patient
   end
 
   def doctor_name
-    self.doctor
+    self.doctor.name
   end
 
-  def change_doctors(next_doctor)
-    self.doctor = next_doctor unless self.doctor == next_doctor
+  def change_doctors(new_doctor)
+    self.doctor = new_doctor unless self.doctor == new_doctor
     
   end
 
