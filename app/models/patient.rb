@@ -6,6 +6,7 @@ class Patient
     @@all = []
 
     def initialize(name, age)
+        # CARYN SAYS: updates needed in this file for the association! 
         @name = name.to_s
         @age = age.to_i
         @impatience = 0

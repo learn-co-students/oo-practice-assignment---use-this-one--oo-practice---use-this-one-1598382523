@@ -52,3 +52,8 @@ Practice Deliverables Part 3
         Doctor#transfer_patient should change a patient’s doctor to another doctor. This should only work if the patient belongs to the current doctor.
 
 Submit your code: do you have the git commands committed to memory yet?
+
+## General Feedback
+- I added comments before seeing yours in run.rb but your prioritized correctly! Building on top of solid code is much more important than rushing through deliverables
+- The code you have is clean is clean and functional and that's really important
+- You can try out the part III deliverables or wait for the Part IV ones and just complete those; up to you! 

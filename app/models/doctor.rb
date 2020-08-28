@@ -27,7 +27,12 @@ class Doctor
 
     def patients
         Patient.all.filter {|patient| patient.doctor == self}
-      end
+    end
+
+    # CARYN SAYS: everything that is here is correct! 
+    # CARYN SAYS: try your hand at the other methods for this class!
+    # CARYN SAYS: you can watch the video first, but then try to do it without directly referencing the vid
+    
 
 end
 
