@@ -1,5 +1,6 @@
 class Patient
-
+	# CARYN SAYS:  everything looks correct and code style is clean! 
+	# CARYN SAYS: what if you wanted to make it possible for a patient to be initialized without a doctor? 
     attr_accessor :name, :age, :impatience, :doctor
 
     @@all = [] 

@@ -10,3 +10,9 @@
     - `git add .` to add all changes
     - `git commit -m "helpful message"`
     - `git push` which may give you a message including a more specific command to run; if it does, run that command. 
+
+
+## General Feedback
+- Excellent job! Based on your code, it appears you have a good grasp of everythingn we've covered up until this point. You also have great code style so it's very readable and will help you hit less errors. 
+- Now that you've got a solid foundation, push yourself to move beyond the required deliverables. Move your current testing in run.rb to a console.rb file so you can use the run.rb to create a CLI. Think of your own (more complicated?) methods to add to the classes and then test in your console.rb file.
+- Good job so far :) 
