@@ -1,4 +1,5 @@
 class Patient
+	# CARYN SAYS: everything looks good here! 
     attr_accessor :name, :age, :impatience, :doctor
     @@all = []
 

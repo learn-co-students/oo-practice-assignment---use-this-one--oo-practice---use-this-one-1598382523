@@ -11,6 +11,7 @@ jiraiya = Doctor.new("Jiraiya", "Gynocology", 60)
 sakura = Patient.new("Sakura", 22, "kakashi")
 
 
+# CARYN SAYS: LOVE TO SEE IT!!!!! lmfao and the doctor's specialitys bahahahahahah
 
 
 

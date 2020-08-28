@@ -15,18 +15,19 @@ class Doctor
     end
     
     def patients
+        # CARYN SAYS:  good! 
         Patient.all.select {|patient| patient.doctor == self}
     end
 
     def discharge_patient(patient)
-        if patient == patients
+        if patient == patients # CARYN SAYS:  patients is an array, so you need to check if the patient is inside of that array 
             patient.doctor = nil
         end
     end
 
     def transfer_patient(patient, doctor)
-        if patient == patients
-            patient.change_doctor(doctor)
+        if patient == patients # CARYN SAYS: see note in discharge_patient 
+            patient.change_doctor(doctor) # CARYN SAYS: ohhhhhhhhhhhhhhhh i love that you used the patient method!!!! Just make sure you call it right (change_doctors)
         end
     end
 
@@ -35,6 +36,7 @@ class Doctor
     end
 
     def self.find_by_specialty(specialty)
+        # CARYN SAYS:  good! 
         self.all.filter {|doctor| doctor.specialty == specialty}
     end
     
