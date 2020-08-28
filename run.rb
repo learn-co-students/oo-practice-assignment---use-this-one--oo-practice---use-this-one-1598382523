@@ -8,4 +8,6 @@ jon = Doctor.new("Jon", "feet")
 jess = Patient.new("Jess", 25)
 seyi = Patient.new("seyi", 24)
 jake = Patient.new("Jake", 42)
+
+# CARYN SAYS: yes lots of examples and testing! 
 binding.pry

@@ -1,6 +1,6 @@
 class Doctor
 
-    attr_accessor :name, :years, :patient, :doctor
+    attr_accessor :name, :years, :patient, :doctor # CARYN SAYS: both patient and doctor should not be here; they are not instance variables
     attr_reader :specialty
 
     @@all = []
@@ -21,12 +21,14 @@ class Doctor
     end
 
     def self.find_by_specialty(specialty)
+        # CARYN SAYS: good!
         self.all.select do |doctor|
             doctor.specialty == specialty
         end
     end
 
     def patients
+        # CARYN SAYS: good! 
         Patient.all.select do |patient|
             patient.doctor == self
         end
@@ -35,7 +37,7 @@ class Doctor
     def discharge_patient(patient)
         if patient.doctor == self
             patient.doctor = nil
-            "It's not you, it's me."
+            "It's not you, it's me." # CARYN SAYS: hahahahaha
         else
             "This is not your patient to dismiss!"
         end
@@ -43,8 +45,10 @@ class Doctor
 
     def transfer_patient(patient)
         if patient.doctor == self
-            patient.doctor = Doctor.all.sample
+            patient.doctor = Doctor.all.sample # CARYN SAYS: I like this solve! I was thinking the method would accept a new_doc but I'm not mad at your solution
+            # CARYN SAYS:  only thing you solution would then need to figure out is making sure the sample didn't get back the same doc
         end
+        # CARYN SAYS: NIIIIICE!
         print "#{self.name}: Hey, #{patient.doctor.name}, #{patient.name} is your new patient."
         print "\n#{patient.doctor.name}: Thanks #{self.name}! #{patient.name}, I will be seeing you now."
         print "\n#{patient.name}: Cool."
