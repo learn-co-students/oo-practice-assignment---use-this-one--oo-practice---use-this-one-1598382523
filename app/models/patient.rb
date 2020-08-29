@@ -16,13 +16,12 @@ class Patient
   end
 
   def doctor_name
-    self.doctor # CARYN SAYS: you already have a method (from attrs) for doctor
-    # CARYN SAYS: if you want this to return the doctor name make sure you're doing self.doctor.name (to get name,  not the whole instance)
+    self.doctor.name
   end
 
-  def change_doctors(next_doctor)
-    self.doctor = next_doctor unless self.doctor == next_doctor
-    # CARYN SAYS: okay i see you with the unless! 
+  def change_doctors(new_doctor)
+    self.doctor = new_doctor unless self.doctor == new_doctor
+    
   end
 
   def inquire_appt_ready
@@ -37,5 +36,3 @@ class Patient
   end
 
 end
-
-   
