@@ -16,6 +16,8 @@ new_appointment = Appointment.new('09-01-2020', patient1, dr1)
 
 other_appointment = Appointment.new('04-02-2021', patient2, dr2)
 
+test_appointment = Appointment.new('11-02-2020', patient2, dr2)
+
 # CARYN SAYS: good beginnings of testing!
 # CARYN SAYS: now move this over to a console.rb file to keep this file reserved for beginning a CLI
 # CARYN SAYS: also feel free to do more coding! 

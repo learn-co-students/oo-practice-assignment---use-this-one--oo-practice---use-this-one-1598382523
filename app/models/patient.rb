@@ -20,7 +20,7 @@ class Patient
   end
 
   def doctors
-    appointments.map{|a| a.doctor}
+    appointments.map{|a| a.doctor}.uniq
   end
 
   def create_appointment(doctor, date)
