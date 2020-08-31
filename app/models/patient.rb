@@ -1,12 +1,12 @@
+
 class Patient 
   
-  attr_accessor :name, :age, :impatience, :doctor
+  attr_accessor :name, :age, :impatience
   @@all = [] 
   
-  def initialize(name, age, doctor)
+  def initialize(name, age)
     @name = name 
     @age = age
-    @doctor = doctor
     @impatience = 0
     @@all << self
   end
@@ -15,14 +15,26 @@ class Patient
     @@all
   end
 
-  def doctor_name
-    self.doctor.name
+  def appointments
+    Appointment.all.select { |appointment| appointment.patient == self }
   end
 
-  def change_doctors(new_doctor)
-    self.doctor = new_doctor unless self.doctor == new_doctor
-    
+  def doctors
+    appointments.map{|a| a.doctor}
   end
+
+  def create_appointment(doctor, date)
+    Appointment.new(date, self, doctor)
+  end
+
+  # def doctor_name
+  #   self.doctor.name
+  # end
+
+  # def change_doctors(new_doctor)
+  #   self.doctor = new_doctor unless self.doctor == new_doctor
+    
+  # end
 
   def inquire_appt_ready
     puts "The doctor will be with you shortly."
@@ -36,3 +48,5 @@ class Patient
   end
 
 end
+
+# binding.pry
